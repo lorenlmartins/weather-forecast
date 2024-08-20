@@ -1,5 +1,5 @@
 using WeatherForecast.Facades;
-using WeatherForecast.Interfaces.Facades;
+using WeatherForecast.Facades.Interfaces;
 using WeatherForecast.Services;
 
 var builder = WebApplication.CreateBuilder(args);

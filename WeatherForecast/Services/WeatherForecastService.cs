@@ -1,9 +1,10 @@
 ﻿using System.Text.Json;
 using WeatherForecast.Models;
+using WeatherForecast.Services.Interfaces;
 
 namespace WeatherForecast.Services
 {
-    public class WeatherForecastService
+    public class WeatherForecastService : IWeatherForecastService
     {
         private readonly HttpClient _httpClient;
         private readonly string _apiKey;

@@ -1,6 +1,6 @@
 ﻿using WeatherForecast.Models;
-using WeatherForecast.Interfaces.Facades;
 using WeatherForecast.Services;
+using WeatherForecast.Facades.Interfaces;
 
 namespace WeatherForecast.Facades
 {
