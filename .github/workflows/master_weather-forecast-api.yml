@@ -5,7 +5,7 @@ name: Build and deploy ASP.Net Core app to Azure Web App - weather-forecast-api
 
 defaults:
   run:
-    working-directory: ./WeatherForecast
+    working-directory: ./
 
 on:
   push:
