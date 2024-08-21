@@ -1,14 +1,14 @@
 ﻿using WeatherForecast.Models;
-using WeatherForecast.Services;
+using WeatherForecast.Services.Interfaces;
 using WeatherForecast.Facades.Interfaces;
 
 namespace WeatherForecast.Facades
 {
     public class WeatherForecastFacade : IWeatherForecastFacade
     {
-        private readonly WeatherForecastService _weatherForecastService;
+        private readonly IWeatherForecastService _weatherForecastService;
 
-        public WeatherForecastFacade(WeatherForecastService weatherForecastService)
+        public WeatherForecastFacade(IWeatherForecastService weatherForecastService)
         {
             _weatherForecastService = weatherForecastService;
         }

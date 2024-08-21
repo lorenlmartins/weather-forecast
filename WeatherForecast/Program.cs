@@ -1,6 +1,7 @@
 using WeatherForecast.Facades;
 using WeatherForecast.Facades.Interfaces;
 using WeatherForecast.Services;
+using WeatherForecast.Services.Interfaces;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,13 +10,13 @@ builder.Services.AddControllers();
 
 // Registering the WeatherForecastFacade and WeatherForecastService
 builder.Services.AddScoped<IWeatherForecastFacade, WeatherForecastFacade>();
-builder.Services.AddScoped<WeatherForecastService>();
+builder.Services.AddScoped<IWeatherForecastService, WeatherForecastService>();
 
 // Configuring HttpClient for external API calls
-builder.Services.AddHttpClient<WeatherForecastService>(client =>
+builder.Services.AddHttpClient<IWeatherForecastService, WeatherForecastService>(client =>
 {
     var baseUrl = builder.Configuration["WeatherApi:BaseUrl"];
-    client.BaseAddress = new Uri(baseUrl); // Usar a URL base do appsettings
+    client.BaseAddress = new Uri(baseUrl); //Use base URL from appsettings
     client.DefaultRequestHeaders.Add("Accept", "application/json");
 });
 
